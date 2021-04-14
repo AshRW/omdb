@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row p-1 m-2">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="pb-1 display-6 card-title">Search Here</h1>
+                    <div class="p-4 border border-2 rounded bg-light">
+                        <form [formGroup]="searchForm">
+                        <label for="searchinput" class="form-label">Name</label>
+                        <input type="text" id="searchinput" class="form-control" aria-describedby="movie" formControlName="moviename">
+                        <div id="movie" class="form-text">
+                        Search your movie by typing here and pressing the search Button Below
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-outline-primary" (click)="searchWithTitle()">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- test -->
+    <!-- <div class="row">
+        <div *ngFor="let s of searchResult.Search" class="p-1 col-xs-12 col-sm-6 col-md-4">
+            <div class="card">
+                <img src="{{s.Poster}}" class="center-cropped card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{s.Title}}</h5>
+                    <p class=" card-text">{{s.Year}}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div> -->
+    <!-- test -->
+    <div class="row">
+        <div *ngFor="let s of searchResult.Search; let i=index" class="p-1 col-xs-10 col-sm-6 col-md-4">
+            <div class="card link-mouse" (click)="selectMovie(i)">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src="{{s.Poster}}" alt="..." width="100%">
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-body">
+                        <h5 class="card-title">{{s.Title}}</h5>
+                        <p class="card-text">{{s.Year}}</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

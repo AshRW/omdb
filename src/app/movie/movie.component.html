@@ -1,0 +1,35 @@
+<div class="container">
+    <!-- <div class="row p-1 m-1">
+        <div class="col-md-4">
+            <img [src]="movieDetails.Poster">
+        </div>
+        <div class="col-md-8">
+            {{movieDetails.Title}}
+        </div>
+    </div> -->
+    <!-- test -->
+    <div class="row p-1 m-1">
+        <div class="card mb-3">
+            <div class="card-header bg-transparent border-success">Year: {{movieDetails.Year}}</div>
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img [src]="movieDetails.Poster">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title display-6">{{movieDetails.Title}} ({{movieDetails.imdbRating}})</h5>
+                  <p class="card-text">Plot: {{movieDetails.Plot}}</p>
+                  <p class="card-text">Actors: {{movieDetails.Actors}}</p>
+                  <p class="card-text">Director: {{movieDetails.Director}}</p>
+                  <p class="card-text"><small class="text-muted">Awards: {{movieDetails.Awards}}</small></p>
+                  <p class="card-text"><small class="text-muted">Genre: {{movieDetails.Genre}}</small></p>
+                  <p class="card-text"><small class="text-muted">Box Office: {{movieDetails.BoxOffice}}</small></p>
+                  <p class="card-text"><small class="text-muted">Awards: {{movieDetails.Awards}}</small></p>
+                </div>
+                <div class="card-footer bg-transparent border-success">Releade Date: {{movieDetails.Released}}</div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- test -->
+</div>
