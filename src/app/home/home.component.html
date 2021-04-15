@@ -1,15 +1,16 @@
+<ngx-spinner></ngx-spinner>
 <div class="container">
     <div class="row p-1 m-2">
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="pb-1 display-6 card-title">Search Here</h1>
+                    <h1 class="pb-1 display-6 card-title"><span class="badge bg-warning">Search Movies</span></h1>
                     <div class="p-4 border border-2 rounded bg-light">
                         <form [formGroup]="searchForm">
-                        <label for="searchinput" class="form-label">Name</label>
+                        <label for="searchinput" class="form-label">Movie Name</label>
                         <input type="text" id="searchinput" class="form-control" aria-describedby="movie" formControlName="moviename">
                         <div id="movie" class="form-text">
-                        Search your movie by typing here and pressing the search Button Below
+                        Search for your movie by typing here and pressing the search Button Below
                         </div>
                         <button type="submit" class="mt-2 btn btn-outline-primary" (click)="searchWithTitle()">Search</button>
                         </form>
@@ -50,4 +51,95 @@
             
         </div>
     </div>
+    <!-- My fav movies -->
+    <div class="row align-items-center justify-content-center p-2 m-2">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h5><span class=" mb-2 badge bg-warning">Anurag's Fav Movies</span></h5>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="card bg-light">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center">
+                                <img [src]="myMovies[0]?.Poster" class="d-block" alt="...">
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="card-title">{{myMovies[0]?.Title}} ({{myMovies[0]?.Year}})</h3>
+                                        <p class="card-text">{{myMovies[0]?.Plot}}</p>
+                                        <p class="card-text">Actors: {{myMovies[0]?.Actors}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card bg-light">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center">
+                                <img [src]="myMovies[1]?.Poster" class="d-block" alt="...">
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="card-title">{{myMovies[1]?.Title}} ({{myMovies[1]?.Year}})</h3>
+                                        <p class="card-text">{{myMovies[1]?.Plot}}</p>
+                                        <p class="card-text">Actors: {{myMovies[1]?.Actors}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card bg-light">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center">
+                                <img [src]="myMovies[2]?.Poster" class="d-block" alt="...">
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="card-title">{{myMovies[2]?.Title}} ({{myMovies[2]?.Year}})</h3>
+                                        <p class="card-text">{{myMovies[2]?.Plot}}</p>
+                                        <p class="card-text">Actors: {{myMovies[2]?.Actors}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card bg-light">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center">
+                                <img [src]="myMovies[3]?.Poster" class="d-block" alt="...">
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="card-title">{{myMovies[3]?.Title}} ({{myMovies[3]?.Year}})</h3>
+                                        <p class="card-text">{{myMovies[3]?.Plot}}</p>
+                                        <p class="card-text">Actors: {{myMovies[3]?.Actors}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+    <!-- my fav movies ends -->
 </div>
