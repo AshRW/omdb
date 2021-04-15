@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import Swal from 'sweetalert2';
 import { OmdbService } from '../services/omdb.service';
 
 @Component({
@@ -10,23 +12,40 @@ import { OmdbService } from '../services/omdb.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private omdb:OmdbService, private router:Router) { }
+  constructor(private omdb:OmdbService, private router:Router, private spinner:NgxSpinnerService) { }
 
   searchForm=new FormGroup({
     moviename:new FormControl('', Validators.required)
   })
   searchResult:any=[];
+  myMovies:any=[];
 
   ngOnInit(): void {
-
+    // this.omdb.getMyFavMovies()
+    // this.myMovies=this.omdb.myFavMovies;
+    this.myMovies=this.omdb.myFavMovies2;
+    // console.log(this.myMovies)
   }
 
   searchWithTitle(){
+    this.spinner.show();
     var name=this.searchForm.value.moviename
-    // console.log(name);
+    var data:any;
+
     this.omdb.getwithTitle(name).subscribe(success=>{
-        console.log(success);
-        this.searchResult=success;
+        // console.log(success);
+        data=success;
+        if(data.Response=="False"){
+          Swal.fire(
+            'Something is Wrong',
+            data.Error,
+            'error'
+          )
+          this.spinner.hide();
+        }else{
+          this.searchResult=success;
+          this.spinner.hide();
+        }
       })
     this.searchForm.reset();
     }

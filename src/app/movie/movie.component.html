@@ -1,3 +1,4 @@
+<ngx-spinner></ngx-spinner>
 <div class="container">
     <!-- <div class="row p-1 m-1">
         <div class="col-md-4">
@@ -9,27 +10,53 @@
     </div> -->
     <!-- test -->
     <div class="row p-1 m-1">
+      <div class="col">
         <div class="card mb-3">
-            <div class="card-header bg-transparent border-success">Year: {{movieDetails.Year}}</div>
+            <div class="card-header bg-transparent border-success"><span class="badge bg-warning">Year:</span> {{movieDetails?.Year}}</div>
             <div class="row g-0">
-              <div class="col-md-3">
-                <img [src]="movieDetails.Poster">
+              <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <img [src]="movieDetails?.Poster">
               </div>
-              <div class="col-md-9">
+              <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                 <div class="card-body">
-                  <h5 class="card-title display-6">{{movieDetails.Title}} ({{movieDetails.imdbRating}})</h5>
-                  <p class="card-text">Plot: {{movieDetails.Plot}}</p>
-                  <p class="card-text">Actors: {{movieDetails.Actors}}</p>
-                  <p class="card-text">Director: {{movieDetails.Director}}</p>
-                  <p class="card-text"><small class="text-muted">Awards: {{movieDetails.Awards}}</small></p>
-                  <p class="card-text"><small class="text-muted">Genre: {{movieDetails.Genre}}</small></p>
-                  <p class="card-text"><small class="text-muted">Box Office: {{movieDetails.BoxOffice}}</small></p>
-                  <p class="card-text"><small class="text-muted">Awards: {{movieDetails.Awards}}</small></p>
+                  <h5 class="card-title display-6">{{movieDetails?.Title}} <span class="badge bg-warning">({{movieDetails?.imdbRating}})</span></h5>
+                  <p class="card-text"><span class="badge bg-warning">Plot:</span> {{movieDetails?.Plot}}</p>
+                  <p class="card-text"><span class="badge bg-warning">Actors:</span> {{movieDetails?.Actors}}</p>
+                  <p class="card-text"><span class="badge bg-warning">Director:</span> {{movieDetails?.Director}}</p>
+                  <p class="card-text"><small class="text-muted"><span class="badge bg-info">Awards:</span> {{movieDetails?.Awards}}</small></p>
+                  <p class="card-text"><small class="text-muted"><span class="badge bg-info">Box Office:</span> {{movieDetails?.BoxOffice}}</small></p>
+                  <p class="card-text"><small class="text-muted"><span class="badge bg-info">Genre:</span> {{movieDetails?.Genre}}</small></p>
                 </div>
-                <div class="card-footer bg-transparent border-success">Releade Date: {{movieDetails.Released}}</div>
+                <div class="card-footer bg-transparent border-success">Releade Date: {{movieDetails?.Released}}</div>
               </div>
             </div>
           </div>
+        </div>
     </div>
     <!-- test -->
+    <div class="row p-1 m-1">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Other Info
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <p class="card-text"><span class="badge bg-secondary">Country:</span> {{movieDetails?.Country}}</p>
+                <p class="card-text"><span class="badge bg-secondary">Language:</span> {{movieDetails?.Language}}</p>
+                <p class="card-text"><span class="badge bg-secondary">DVD:</span> {{movieDetails?.DVD}}</p>
+                <p class="card-text"><span class="badge bg-secondary">Metascore:</span> {{movieDetails?.Metascore}}</p>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <p class="card-text"><span class="badge bg-secondary">Rated:</span> {{movieDetails?.Rated}}</p>
+                <p class="card-text"><span class="badge bg-secondary">Writer:</span> {{movieDetails?.Writer}}</p>
+                <p class="card-text"><span class="badge bg-secondary">Runtime:</span> {{movieDetails?.Runtime}}</p>
+                <p class="card-text"><span class="badge bg-secondary">ImDB Id:</span> {{movieDetails?.imdbID}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
